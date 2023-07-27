@@ -1,7 +1,13 @@
-import socket as soc    
+import sys
+import socket as soc
 
-# Configuração do socket do servidor
-server_port = 3570
+# Tenta configurar o número de porta passada como argumento
+try:
+    server_port = int(sys.argv[1])
+except:
+    print("Porta padrão 3570 utilizada.")
+    server_port = 3570
+
 server_addr = ("127.0.0.1", server_port)
 
 # Cria o socket do servidor
